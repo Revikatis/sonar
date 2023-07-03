@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 
 //var link = 'http://localhost:3000/api/products';
-//var linkPost = 'http://localhost:3000/api/dodaj';
+var linkPost = 'http://localhost:3000/api/dodaj';
 
 
 let UUid = 0;
