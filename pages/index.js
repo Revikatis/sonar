@@ -1,9 +1,6 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-//var link = 'http://localhost:3000/api/products';
-//var linkPost = 'http://localhost:3000/api/dodaj';
 
 
 let UUid = 0;
@@ -13,16 +10,15 @@ function getId() {
 
 const PRODUCTS = [{ Category: 'kategoria', Price: '0', Name: 'nazwa' }];
 
-var dataFetched = false;
+let dataFetched = false;
 
 export default function App() {
     const [productData, setProductData] = useState();
 
-    var data = PRODUCTS;
+    let data = PRODUCTS;
 
     const getApiData = async () => {
         const response = await fetch('api/products').then(response => response.json());
-        //console.log(response);
         setProductData(response);
     };
 
@@ -186,53 +182,3 @@ function KoszykTable({ products, DeleteFromKoszyk }) {
         </div>
     );
 }
-
-/*
-function Payment({sum }){
-	function handleClick() {
-    handleSubmit();
-    // Send data to the backend via POST
-    fetch(linkPost, {  // Enter your IP address here
-
-      method: 'POST', 
-      mode: 'cors', 
-      body: JSON.stringify(sum) // body data type must match "Content-Type" header
-
-    })
-    //console.log("fecz?")
-  }
-	const handleSubmit = async (event) => {
-    //event.preventDefault();
-    const data = {
-      suma: sum,
-    };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = '/api/dodaj';
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSONdata,
-    };
-    const response = await fetch(endpoint, options);
-
-    const result = await response.json();
-	console.log(JSONdata);
-	console.log(result);
-    alert(`Your name and e-mail: ${result.suma}`);
-  };
-	
-	
-	
-	
-  return (
-<div>
-<h2>Płatności</h2>
-	  suma: {sum}zł
-<button   onClick={handleClick}>wyślij pieniądze na serwer</button>
-	  
-</div>
-  );
-
-}	*/
