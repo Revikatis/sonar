@@ -8,4 +8,9 @@ COPY package-lock.json ./
 RUN npm install
 
 # add app
-COPY . ./
+COPY pages ./pages
+#npm run dev
+#CMD ["npx","next","dev"]
+CMD ["npm","run","dev"]
+#CMD ["ls"]
+
