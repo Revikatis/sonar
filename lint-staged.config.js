@@ -1,4 +1,4 @@
 module.exports = {
-  '/pages/*.{js}': ['eslint'],
-   //'*.{js,ts,tsx}': ['eslint'],
+  //'/pages/*.{js}': ['eslint'],
+   '*.{js,ts,tsx}': ['eslint'],
 };
